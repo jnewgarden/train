@@ -83,7 +83,7 @@ database.ref().on("child_added", function (childSnapshot) {
 
     // Add each train's data into the table
     $("#schedule > tbody").append("<tr><td>" + childSnapshot.val().trainName + "</td><td>" + childSnapshot.val().destination + "</td><td>" +
-        childSnapshot.val().frequency + "</td><td>" + moment(nextTrainTime).format("hh:mm") + "</td><td>" + minsUntilTrain + "</td></tr>");
+        childSnapshot.val().frequency + "</td><td>" + moment(nextTrainTime).format("LT") + "</td><td>" + minsUntilTrain + "</td></tr>");
 
     // Handle the errors
 }, function (errorObject) {
